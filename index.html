@@ -3,8 +3,9 @@
 <head>
 
 <title>My Linktree</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 
@@ -12,10 +13,45 @@ body{
 margin:0;
 font-family:Arial;
 text-align:center;
-background:linear-gradient(135deg,#000000,#1a1a1a);
 color:white;
 padding-top:60px;
+overflow:hidden;
 }
+
+/* GALAXY BERPUTAR */
+
+.galaxy{
+position:fixed;
+width:200%;
+height:200%;
+top:-50%;
+left:-50%;
+z-index:-3;
+
+background:url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
+background-size:cover;
+
+animation:putarGalaxy 120s linear infinite;
+opacity:0.7;
+}
+
+@keyframes putarGalaxy{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* PARTICLE */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+}
+
+/* PROFILE */
 
 .profile img{
 width:130px;
@@ -28,31 +64,48 @@ border:3px solid gold;
 h1{
 color:gold;
 margin-top:15px;
+font-size:32px;
 }
 
 p{
-color:#ccc;
+color:#000000;
 }
+
+/* LINKS */
 
 .links{
 margin-top:30px;
 }
 
 .link{
-display:block;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
 width:280px;
 margin:15px auto;
 padding:15px;
-background:#111;
+
+background:rgba(0,0,0,0.6);
 border-radius:12px;
+
 text-decoration:none;
 color:white;
 font-size:18px;
+
 transition:0.3s;
+border:1px solid #00ffff;
+backdrop-filter:blur(5px);
+}
+
+.link img{
+width:22px;
+height:22px;
 }
 
 .link:hover{
-background:gold;
+background:#00ffff;
 color:black;
 transform:scale(1.05);
 }
@@ -63,25 +116,70 @@ transform:scale(1.05);
 
 <body>
 
+<div class="galaxy"></div>
+<div id="particles-js"></div>
+
 <div class="profile">
 
 <img src="https://i.imgur.com/YmKFtMm.png">
 
 <h1>SANDI PRAYOGI</h1>
-
 <p>Welcome Para Sahabat</p>
 
 </div>
 
 <div class="links">
 
-<a class="link" href="https://www.instagram.com/sanyourbae14?igsh=Y2s0eTdic3FsdTlh&utm_source=qr">📸 Instagram</a>
+<a class="link" href="https://www.instagram.com/sanyourbae14">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+Instagram
+</a>
 
-<a class="link" href="https://www.tiktok.com/@sandipra04?_r=1&_t=ZS-94RSnA1SSIB">🎵 TikTok</a>
+<a class="link" href="https://www.tiktok.com/@sandipra04">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+TikTok
+</a>
 
-<a class="link" href="https://wa.me/6285722196401">💬 WhatsApp</a>
+<a class="link" href="https://wa.me/6285722196401">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+WhatsApp
+</a>
+
+<a class="link" href="https://twitter.com/sandipra66">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png">
+Twitter / X
+</a>
 
 </div>
+
+<script>
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 120
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.6
+    },
+    "size": {
+      "value": 2,
+      "random": true
+    },
+    "move": {
+      "enable": true,
+      "speed": 1
+    }
+  }
+});
+
+</script>
 
 </body>
 </html>
