@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>My Galaxy Linktree</title>
+<title>Galaxy Linktree</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -16,6 +16,7 @@ text-align:center;
 color:white;
 padding-top:60px;
 overflow:hidden;
+background:black;
 }
 
 /* GALAXY BACKGROUND */
@@ -31,7 +32,7 @@ z-index:-3;
 background:url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
 background-size:cover;
 
-animation:putarGalaxy 200s linear infinite;
+animation:putarGalaxy 220s linear infinite;
 opacity:0.6;
 }
 
@@ -51,20 +52,37 @@ left:0;
 z-index:-2;
 }
 
-/* SHOOTING STAR */
+/* METEOR */
 
-.shooting-star{
+.meteor{
 position:fixed;
 width:2px;
-height:80px;
+height:100px;
 background:linear-gradient(-45deg,white,transparent);
-top:-50px;
-left:50%;
 opacity:0.8;
-animation:shoot 5s linear infinite;
+animation:meteor 6s linear infinite;
 }
 
-@keyframes shoot{
+.meteor:nth-child(1){
+top:10%;
+left:80%;
+animation-delay:0s;
+}
+
+.meteor:nth-child(2){
+top:20%;
+left:60%;
+animation-delay:2s;
+}
+
+.meteor:nth-child(3){
+top:0%;
+left:40%;
+animation-delay:4s;
+}
+
+@keyframes meteor{
+
 0%{
 transform:translate(0,0) rotate(45deg);
 opacity:0;
@@ -75,9 +93,10 @@ opacity:1;
 }
 
 100%{
-transform:translate(-800px,800px) rotate(45deg);
+transform:translate(-900px,900px) rotate(45deg);
 opacity:0;
 }
+
 }
 
 /* PROFILE */
@@ -88,18 +107,19 @@ height:140px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid gold;
-box-shadow:0 0 25px gold;
+box-shadow:0 0 30px gold;
 }
 
 h1{
 color:gold;
 margin-top:15px;
-font-size:34px;
+font-size:36px;
 letter-spacing:2px;
+text-shadow:0 0 10px gold;
 }
 
 p{
-color:#ddd;
+color:#ccc;
 }
 
 /* LINKS */
@@ -127,7 +147,7 @@ font-size:18px;
 
 transition:0.3s;
 border:1px solid rgba(255,215,0,0.5);
-backdrop-filter:blur(6px);
+backdrop-filter:blur(8px);
 }
 
 .link img{
@@ -138,8 +158,8 @@ height:24px;
 .link:hover{
 background:gold;
 color:black;
-transform:scale(1.06);
-box-shadow:0 0 20px gold;
+transform:scale(1.07);
+box-shadow:0 0 25px gold;
 }
 
 </style>
@@ -151,7 +171,9 @@ box-shadow:0 0 20px gold;
 <div class="galaxy"></div>
 <div id="particles-js"></div>
 
-<div class="shooting-star"></div>
+<div class="meteor"></div>
+<div class="meteor"></div>
+<div class="meteor"></div>
 
 <div class="profile">
 
@@ -191,7 +213,7 @@ Twitter / X
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 110
+      "value": 120
     },
     "color": {
       "value": "#ffffff"
@@ -200,7 +222,7 @@ particlesJS("particles-js", {
       "type": "circle"
     },
     "opacity": {
-      "value": 0.6
+      "value": 0.7
     },
     "size": {
       "value": 2,
